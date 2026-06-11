@@ -1,17 +1,17 @@
 :root {
   --ink: #111111;
   --muted-ink: #5c5a55;
-  --paper: #f5f4ef;
-  --paper-deep: #e8e5dc;
-  --surface: #ffffff;
-  --line: #d8d4ca;
+  --paper: #e2bfa3;
+  --paper-deep: #d4a98c;
+  --surface: #e2bfa3;
+  --line: #c9a888;
   --olive: #606a57;
   --olive-dark: #323a2e;
   --charcoal: #171715;
-  --cream: #fbfaf6;
+  --cream: #e2bfa3;
   --radius: 8px;
   --section-x: clamp(20px, 5vw, 76px);
-  --section-y: clamp(64px, 8vw, 112px);
+  --section-y: clamp(28px, 3.5vw, 48px);
   --content-max: 1440px;
   --font-display: Georgia, "Times New Roman", serif;
   --font-body: "Avenir Next", "Helvetica Neue", Helvetica, sans-serif;
@@ -90,7 +90,7 @@ button {
 .site-header.is-scrolled {
   padding-block: 12px;
   color: var(--ink);
-  background: rgba(245, 244, 239, 0.96);
+  background: rgba(226, 191, 163, 0.96);
   border-bottom: 1px solid var(--line);
 }
 
@@ -200,7 +200,7 @@ button {
   align-items: end;
   max-width: var(--content-max);
   margin: 0 auto;
-  padding: clamp(80px, 11svh, 136px) var(--section-x) clamp(32px, 4.5svh, 56px);
+  padding: clamp(80px, 11svh, 136px) var(--section-x) clamp(20px, 2.5svh, 36px);
 }
 
 .hero-copy {
@@ -211,7 +211,7 @@ button {
 .section-kicker {
   margin: 0 0 14px;
   color: inherit;
-  font-size: 15px;
+  font-size: clamp(17px, 1.4vw, 22px);
   font-weight: 700;
 }
 
@@ -344,7 +344,7 @@ button {
   align-items: end;
   max-width: var(--content-max);
   margin-inline: auto;
-  margin-bottom: 44px;
+  margin-bottom: 32px;
 }
 
 .section-heading .section-kicker {
@@ -371,6 +371,10 @@ button {
   font-size: clamp(17px, 1.55vw, 20px);
 }
 
+.company-section {
+  background: #e2bfa3;
+}
+
 .company-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -391,7 +395,6 @@ button {
 
 .company-panel h3,
 .brand-card h3,
-.campaign-card h3,
 .timeline-item h3 {
   margin: 0;
   font-family: var(--font-display);
@@ -401,7 +404,6 @@ button {
 
 .company-panel p,
 .brand-card p,
-.campaign-card p,
 .timeline-item p {
   margin: 12px 0 0;
   color: var(--muted-ink);
@@ -418,9 +420,14 @@ button {
 }
 
 .scale-strip div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   min-height: 148px;
   padding: 24px;
   border-right: 1px solid rgba(0, 0, 0, 0.12);
+  text-align: center;
 }
 
 .scale-strip div:last-child {
@@ -429,25 +436,24 @@ button {
 
 .scale-strip strong {
   display: block;
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: clamp(36px, 5vw, 64px);
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1;
 }
 
 .scale-strip span {
   display: block;
-  max-width: 180px;
   margin-top: 14px;
   color: rgba(26, 17, 8, 0.68);
 }
 
 .image-break {
   position: relative;
-  min-height: clamp(480px, 72svh, 760px);
+  min-height: clamp(360px, 55svh, 580px);
   display: grid;
   align-items: center;
-  padding: 48px var(--section-x);
+  padding: 36px var(--section-x);
   overflow: hidden;
   color: #ffffff;
   background: var(--charcoal);
@@ -499,7 +505,7 @@ button {
   margin-bottom: 18px;
   color: #ffffff;
   font-family: var(--font-body);
-  font-size: clamp(15px, 1.25vw, 22px);
+  font-size: clamp(17px, 1.4vw, 22px);
 }
 
 .philosophy-copy h2 {
@@ -517,19 +523,19 @@ button {
 }
 
 .categories-section {
-  background: var(--charcoal);
+  background: #e2bfa3;
 }
 
 .categories-section .section-heading .section-kicker {
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--olive-dark);
 }
 
 .categories-section .section-heading h2 {
-  color: #ffffff;
+  color: var(--ink);
 }
 
 .categories-section .section-heading p:not(.section-kicker) {
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--muted-ink);
 }
 
 .category-grid {
@@ -562,9 +568,50 @@ button {
 }
 
 .portfolio-section {
-  background: var(--cream);
+  background: #e2bfa3;
   border-block: 1px solid var(--line);
 }
+
+.portfolio-section .brand-studio {
+  background: var(--charcoal);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.portfolio-section .brand-studio-logo {
+  background: #1e1e1b;
+}
+
+.portfolio-section .brand-studio-copy p {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.portfolio-section .brand-card {
+  background: var(--charcoal);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.portfolio-section .brand-card:hover,
+.portfolio-section .brand-card:focus-visible {
+  background: #222220;
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
+.portfolio-section .brand-art {
+  background: #ffffff;
+  border-right-color: rgba(255, 255, 255, 0.15);
+}
+
+.portfolio-section .brand-info > p {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.portfolio-section .brand-info span,
+.portfolio-section .brand-extra {
+  color: rgba(255, 255, 255, 0.62);
+}
+
 
 .brand-studio {
   display: grid;
@@ -637,8 +684,9 @@ button {
   place-items: center;
   min-height: 188px;
   padding: 24px;
-  background: var(--surface);
-  border-right: 1px solid var(--line);
+  background: #ffffff;
+  border-right: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08);
 }
 
 .brand-art img {
@@ -663,7 +711,10 @@ button {
 }
 
 .brand-info h3 {
-  font-size: clamp(26px, 2.4vw, 34px);
+  font-size: clamp(17px, 1.7vw, 24px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .brand-info span,
@@ -705,8 +756,8 @@ button {
 
 .campaign-section {
   padding: var(--section-y) 0;
-  background: var(--charcoal);
-  color: #ffffff;
+  background: #e2bfa3;
+  color: var(--ink);
 }
 
 .campaign-intro {
@@ -716,229 +767,42 @@ button {
   align-items: end;
   max-width: var(--content-max);
   margin-inline: auto;
-  padding: 0 var(--section-x) 48px;
+  padding: 0 var(--section-x) 28px;
 }
 
 .campaign-intro .section-kicker {
   grid-column: 1 / -1;
   margin-bottom: -12px;
-  color: rgba(255, 255, 255, 0.82);
+  color: var(--olive-dark);
 }
 
 .campaign-intro p {
-  color: rgba(255, 255, 255, 0.68);
+  color: var(--muted-ink);
 }
 
-.campaign-stack {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
+.campaign-banners {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
   max-width: var(--content-max);
   margin-inline: auto;
   padding-inline: var(--section-x);
 }
 
-.campaign-card {
-  display: grid;
-  grid-template-rows: auto 1fr;
+.campaign-banner {
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: var(--radius);
-  background: #22221f;
 }
 
-.campaign-media {
-  background: #11110f;
-}
-
-.campaign-media img {
+.campaign-banner img {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 9;
   height: auto;
-  object-fit: cover;
-  object-position: center;
+  transition: transform 500ms ease;
 }
 
-.campaign-media-portrait img {
-  aspect-ratio: 4 / 5;
-  object-position: center;
-  filter: grayscale(1) contrast(1.04);
-}
-
-.campaign-card::after {
-  display: none;
-}
-
-.campaign-copy {
-  display: grid;
-  align-content: start;
-  padding: clamp(20px, 2.8vw, 34px);
-  color: #ffffff;
-}
-
-.campaign-card p {
-  color: rgba(255, 255, 255, 0.72);
-}
-
-.campaign-video-list {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 12px;
-  margin-top: 24px;
-}
-
-.campaign-video-list-compact {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.campaign-video-list-compact .campaign-video-link:first-child {
-  grid-column: 1 / -1;
-}
-
-.campaign-video-link {
-  position: relative;
-  display: block;
-  overflow: hidden;
-  min-height: 190px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: var(--radius);
-  background: #11110f;
-  color: #ffffff;
-}
-
-.campaign-video-link::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(15, 15, 13, 0.08), rgba(15, 15, 13, 0.72));
-  pointer-events: none;
-}
-
-.campaign-video-link img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  min-height: 190px;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  filter: saturate(0.9) brightness(0.86);
-  transition: filter 160ms ease;
-}
-
-.campaign-video-link span {
-  position: absolute;
-  z-index: 1;
-  left: 14px;
-  right: 14px;
-  bottom: 12px;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 1.2;
-}
-
-.campaign-video-link:hover {
-  border-color: rgba(255, 255, 255, 0.36);
-}
-
-.campaign-video-link:hover img {
-  filter: saturate(1) brightness(0.72);
-}
-
-.campaign-card-text {
-  display: grid;
-  min-height: 100%;
-  background: var(--olive-dark);
-}
-
-.campaign-card-text .campaign-copy {
-  align-content: end;
-  min-height: 320px;
-}
-
-.reel-collage {
-  max-width: var(--content-max);
-  margin: 64px auto 0;
-  padding-inline: var(--section-x);
-}
-
-.reel-collage-heading {
-  margin-bottom: 32px;
-  max-width: 680px;
-}
-
-.reel-collage-heading h3 {
-  margin: 0;
-  font-family: var(--font-display);
-  font-size: clamp(32px, 3.4vw, 52px);
-  font-weight: 500;
-  line-height: 1;
-}
-
-.reel-collage-heading p {
-  max-width: 340px;
-  margin: 18px 0 0;
-  color: rgba(255, 255, 255, 0.68);
-}
-
-.reel-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: clamp(240px, 22vw, 320px) clamp(130px, 12vw, 180px);
-  gap: 12px;
-}
-
-.reel-card {
-  position: relative;
-  display: block;
-  overflow: hidden;
-  color: #ffffff;
-  background: #11110f;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: var(--radius);
-}
-
-.reel-card-portrait {
-  grid-row: 1;
-}
-
-.reel-card-landscape {
-  grid-row: 2;
-}
-
-.reel-card img,
-.reel-card video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: saturate(0.92) brightness(0.86);
-  transition: filter 160ms ease, opacity 160ms ease;
-}
-
-.reel-card-landscape img,
-.reel-card-landscape video {
-  aspect-ratio: 16 / 9;
-}
-
-.reel-card:hover {
-  border-color: rgba(255, 255, 255, 0.34);
-}
-
-.reel-card:hover img,
-.reel-card:hover video {
-  filter: saturate(1) brightness(0.76);
-}
-
-.reel-card-top img,
-.reel-card-top video {
-  object-position: center top;
-}
-
-.reel-card-center img,
-.reel-card-center video {
-  object-position: center;
+.campaign-banner:hover img {
+  transform: scale(1.01);
 }
 
 .founder-section {
@@ -958,12 +822,17 @@ button {
 
 .founder-photo img {
   width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+  height: auto;
+  display: block;
 }
 
 .founder-copy {
   max-width: 680px;
+}
+
+.founder-copy h2 {
+  font-size: clamp(26px, 2.8vw, 42px);
+  line-height: 1.1;
 }
 
 .founder-copy .section-kicker {
@@ -1041,9 +910,10 @@ button {
   aspect-ratio: 1;
   object-fit: contain;
   padding: 24px;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: var(--radius);
-  background: var(--surface);
+  background: #ffffff;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08);
 }
 
 .contact-section {
@@ -1283,7 +1153,7 @@ button {
 @media (max-width: 720px) {
   :root {
     --section-x: 18px;
-    --section-y: 56px;
+    --section-y: 28px;
   }
 
   .site-header {
@@ -1295,7 +1165,7 @@ button {
   }
 
   .site-header.is-scrolled {
-    background: rgba(245, 244, 239, 0.97);
+    background: rgba(226, 191, 163, 0.97);
   }
 
   .brand-logo {
@@ -1356,11 +1226,15 @@ button {
 
   .section-heading h2,
   .campaign-intro h2,
-  .founder-copy h2,
   .image-break h2,
   .contact-panel h2 {
     font-size: clamp(32px, 10.5vw, 48px);
     line-height: 1.02;
+  }
+
+  .founder-copy h2 {
+    font-size: clamp(22px, 6vw, 32px);
+    line-height: 1.12;
   }
 
   .section-heading {
@@ -1474,7 +1348,7 @@ button {
 
   .philosophy-copy .section-kicker {
     margin-bottom: 12px;
-    font-size: 15px;
+    font-size: 17px;
   }
 
   .philosophy-copy h2 {
@@ -1557,17 +1431,11 @@ button {
   }
 
   .campaign-section {
-    padding: 56px 0;
+    padding: 28px 0;
   }
 
   .campaign-intro {
     padding-bottom: 28px;
-  }
-
-  .campaign-stack {
-    grid-template-columns: 1fr;
-    gap: 12px;
-    padding-inline: var(--section-x);
   }
 
   .history-media {
@@ -1587,49 +1455,6 @@ button {
 
   .partner-grid img {
     padding: 18px;
-  }
-
-  .campaign-card {
-    min-height: 0;
-  }
-
-  .campaign-copy {
-    padding: 20px;
-  }
-
-  .campaign-video-list,
-  .campaign-video-list-compact {
-    grid-template-columns: 1fr;
-  }
-
-  .campaign-video-list-compact .campaign-video-link:first-child {
-    grid-column: auto;
-  }
-
-  .campaign-video-link {
-    min-height: 150px;
-  }
-
-  .campaign-card-text .campaign-copy {
-    min-height: 220px;
-  }
-
-  .reel-collage {
-    margin-top: 36px;
-  }
-
-  .reel-grid {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: clamp(180px, 28vw, 260px) clamp(110px, 16vw, 160px);
-    gap: 10px;
-  }
-
-  .reel-card-portrait {
-    grid-row: 1;
-  }
-
-  .reel-card-landscape {
-    grid-row: 2;
   }
 
   .contact-actions,
